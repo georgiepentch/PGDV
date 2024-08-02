@@ -19,12 +19,24 @@ class PGDV:
         return "\n".join([f"   Pitch: {i[0]}\n     Gap: {i[1]}\nDuration: {i[2]}\nVelocity: {i[3]}\n"
                           for i in self.data])
 
-    @classmethod
-    def from_csv(cls, path):
+    @staticmethod
+    def data_from(path):
         with open(path) as f:
             data = list(reader(f))
-        return cls(data)
+        return data
 
     @classmethod
-    def to_csv(cls, path):
+    def from_csv(cls, path):
+        return cls(cls.data_from(path))
+
+    def to_csv(self, path):
         pass
+
+    @classmethod
+    def from_midi(cls, path):
+        pass
+
+    def to_midi(self, path):
+        pass
+
+

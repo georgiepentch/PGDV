@@ -1,0 +1,10 @@
+LIST OF HYPERPARAMETERS:
+
+    d_p:    Embedding dimension of p
+    d_gd:   Embedding dimension of g and d
+    d_v:    Embedding dimension of v
+
+    dropout:    Dropout rate
+    n_heads:    Number of attention heads
+    n_layers:   Number of layers
+    context:    Context window size
