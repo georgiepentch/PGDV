@@ -15,7 +15,7 @@ class MusicDataset(Dataset):
         return len(self.files)
 
     def __getitem__(self, idx):
-        return self.files[idx]
+        return torch.tensor(self.files[idx])
 
 
 class Embedding(nn.Module):
@@ -29,4 +29,10 @@ class Embedding(nn.Module):
     def forward(self, x):  # x is a tensor of shape (batch_size, sequence_length, 4)
         pass
 
+
+data = MusicDataset()
+
+
+loader = DataLoader(data, batch_size=1, shuffle=False)
+print(list(loader))
 

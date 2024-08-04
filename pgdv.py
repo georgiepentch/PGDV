@@ -14,7 +14,7 @@ class PGDV:
     @classmethod
     def from_csv(cls, path):
         with open(path) as f:
-            data = list(reader(f))
+            data = [[int(i) for i in row] for row in reader(f)]
         return cls(data)
 
     def to_csv(self, path):
@@ -29,5 +29,4 @@ class PGDV:
 
     def transpose(self):
         pass
-
 
